@@ -19,7 +19,7 @@ export default class App extends Component {
   render() {
     const greetings = {
       
-      details: 'Please do well to send the requested data before the close of the week'
+      details: 'Welcome'
     }
     return (
       <div>
@@ -43,7 +43,7 @@ const Greeting = ({subject ='Donot Reply', details}) => (
 );
 //React props with Default value
 Greeting.defaultProps ={
-  subject:'Earth'
+  subject:'Ignore this'
 }
 const Title =({title})=><h1>{title}</h1>
 

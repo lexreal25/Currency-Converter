@@ -28,7 +28,8 @@ span {
 
 .page {
   position: absolute;
-  left: 20%;
+  left: 17%;
+  top: 10%;
   padding: 5%;
   background-color: #fff;
   text-align: center;

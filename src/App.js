@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Currency from './Currency';
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      isShow: false,
+    };
+  }
+
+  toggleShow = () => {
+    this.setState(state => ({isShow: !state.isShow}))
+  }
+
+
+  render() {
+    const greetings = {
+      
+      details: 'Please do well to send the requested data before the close of the week'
+    }
+    return (
+      <div>
+        <Button onClick={this.toggleShow}/>  
+        {this.state.isShow ? <Greeting {...greetings} /> : null}
+        
+        <Currency />
+      </div>
+    )
+  }
 }
 
-export default App;
+const Button = ({onClick}) =>(
+  <button onClick={onClick} type='button'>Toggle Show</button>
+)
+const Greeting = ({subject ='Donot Reply', details}) => (
+  <div>
+    <Title title={subject}/>
+    <Description details={details} />
+  </div>
+);
+//React props with Default value
+Greeting.defaultProps ={
+  subject:'Earth'
+}
+const Title =({title})=><h1>{title}</h1>
+
+const Description =({details})=><h2>{details}</h2>

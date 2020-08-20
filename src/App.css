@@ -42,6 +42,9 @@ input{
   line-height: 7px;
   height: 20px;
   border: none;
-  background-color: silver;
+  border-bottom: 1px solid purple;
   border-radius: 3px;
+}
+input:focus{
+  border: none;
 }
